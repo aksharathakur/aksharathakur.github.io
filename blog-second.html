@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Blog #1</title>
+  <title>Blog #2</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -24,16 +24,26 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+  <link href="prism.css" rel="stylesheet" />
+
   <!-- =======================================================
     Theme Name: DevFolio
     Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
+
+
+
+
 </head>
 
 <body>
   <!--/ Nav Star /-->
+
+  <script src="prism.js"></script>
+
+
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll" href="index.html">Akshara Thakur Portfolio</a>
@@ -75,7 +85,7 @@
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="intro-title mb-4">Emergency Response IOT for elders</h2>
+          <h2 class="intro-title mb-4">Bubble Sort visualizer</h2>
           <ol class="breadcrumb d-flex justify-content-center">
             <li class="breadcrumb-item">
               <a href="index.html">Home</a>
@@ -83,7 +93,7 @@
            <!--  <li class="breadcrumb-item">
               <a href="#">Library</a>
             </li> -->
-            <li class="breadcrumb-item active">Blog #1</li>
+            <li class="breadcrumb-item active">Blog #2</li>
           </ol>
         </div>
       </div>
@@ -98,10 +108,10 @@
         <div class="col-md-8">
           <div class="post-box">
             <div class="post-thumb">
-              <img src="img/post-1.jpg" class="img-fluid" alt="">
+              <img src="img/work-3.jpg" class="img-fluid" alt="">
             </div>
             <div class="post-meta">
-              <h1 class="article-title">IOT solution for immediate help for elders</h1>
+              <h1 class="article-title">Visualization for a common sorting algorithm - Bubble Sort</h1>
               <ul>
                 <li>
                   <span class="ion-ios-person"></span>
@@ -109,27 +119,35 @@
                 </li>
                 <li>
                   <span class="ion-pricetag"></span>
-                  <a href="blog-single.html"> March 2020 </a>
+                  <a href="blog-single.html"> September 2020 </a>
                 </li>
                 <li>
                   <span class="ion-chatbox"></span>
-                  <a href="#">Grade X, Modern School, Barakhamba Road, New Delhi </a>
+                  <a href="#">Dubai International Academy, Dubai, U.A.E. </a>
                 </li>
               </ul>
             </div>
             <div class="article-content">
               <strong>Background</strong>
               <p>
-                One of the observations I had in my neighborhood was that of elderly people residing alone at home, while the younger members of their family were occupied with their professional work. This made them a vulnerable segment with potential exposures to incidents of theft, robbery, physical assault, murder or even ill health. With no one around, they were always in potential need of an immediate intervention.
+                In a Computer Science class being taught at my high school, I came across the concept of sorting. Sorting plays a crucial role in several applications and I realized in that class that there are different ways in which a typical sorting operation could be implemented. Having a variety of implementation could be useful when dealing with tasks that have limited memory capacity and need optimal execution speed. However, one thing that my peers and I struggled alot with was visualizing the algorithm written on the blackboard. That's when I had the idea for  implementing a soritng visualizer and picked a simple Bubble Sort Algorithm to try my implementation out!
               </p>
               <strong>Proposed Solution</strong>
               <p>
-               To address this exposure, I designed and developed an IOT device. With one push button on this device, the affected elderly person could transmit a distress message to a responsible person who would in turn be in a position to take an immediate action. Within our housing condominium, the responsible person was identified as the resident President of the Housing Society, and all the elderly residents were provided access to a push button of this integrated IOT device. In case of a distress, they could push the button, and the resident President would get a distress message for initiating the necessary action.
+               For developing a good sorting visualizer, I started looking for good Python libraries for visualization. The modules I found that would be useful for the project were:
+               <ul> 
+               <li> <b>Matplotlib:</b> An excellent library for visualizing Python arrays. To install the module, we could use the following command in the terminal:
+                <code>pip install matplotlib</code>
+                 
+               </li>
 
+               <li> <b>PyQt5:</b> Another great Python library for developing interactive desktop applications. To install the module, we could use the following command in the terminal: <code>pip install PyQt5==5.9.2</code>
+               </li>
+              </ul>
               </p>
-              <strong>Design of IOT Device</strong>
+              <strong>Coding!</strong>
               <p>
-               The central security controller has a single Arduino uno board that’s connected to the GSM module via the transmission/receiver circuit wires, and a piezo buzzer. The Arduino has an encoded button and when pressed, the controller triggers the buzzer and notifies the owner via text message. To turn the alarm off, the owner can either send a pre-configured text message from the registered number or simply press the disarm button.
+               Next step involved creating a <code>main.py</code> file and writing the code for bubblesort algorithm. Next step involved using the above libraries to visualize the algorithm.
               </p>
              
 
@@ -138,12 +156,92 @@
                 <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
               </blockquote> -->
              
-              <strong> Diagram of the IOT Device</strong>
+              <strong> Code </strong>
+              <p> The code for my implementation is shown as follows:
 
-<p><img src="pic/circuit.png" ></p>
+
+         <pre class = "line-numbers">
+    <code class="language-python">
+# imports 
+import random 
+from matplotlib import pyplot as plt, animation 
+
+# helper methods 
+def swap(A, i, j): 
+  A[i], A[j] = A[j], A[i] 
+
+
+# algorithms 
+def bubblesort(A): 
+  swapped = True
+  
+  for i in range(len(A) - 1): 
+    if not swapped: 
+      return
+    swapped = False
+    
+    for j in range(len(A) - 1 - i): 
+      if A[j] > A[j + 1]: 
+        swap(A, j, j + 1) 
+        swapped = True
+      yield A 
+
+
+def visualize(): 
+  N = 30
+  A = list(range(1, N + 1)) 
+  random.shuffle(A) 
+  
+  # creates a generator object containing all 
+  # the states of the array while performing 
+  # sorting algorithm 
+  generator = bubblesort(A) 
+  
+  # creates a figure and subsequent subplots 
+  fig, ax = plt.subplots() 
+  ax.set_title("Bubble Sort O(n\N{SUPERSCRIPT TWO})") 
+  bar_sub = ax.bar(range(len(A)), A, align="edge") 
+  
+  # sets the maximum limit for the x-axis 
+  ax.set_xlim(0, N) 
+  text = ax.text(0.02, 0.95, "", transform=ax.transAxes) 
+  iteration = [0] 
+  
+  # helper function to update each frame in plot 
+  def update(A, rects, iteration): 
+    for rect, val in zip(rects, A): 
+      rect.set_height(val) 
+    iteration[0] += 1
+    text.set_text(f"# of operations: {iteration[0]}") 
+
+  # creating animation object for rendering the iteration 
+  anim = animation.FuncAnimation( 
+    fig, 
+    func=update, 
+    fargs=(bar_sub, iteration), 
+    frames=generator, 
+    repeat=True, 
+    blit=False, 
+    interval=15, 
+    save_count=90000, 
+  ) 
+  
+  # for showing the animation on screen 
+  plt.show() 
+  plt.close() 
+
+
+if __name__ == "__main__": 
+  visualize() 
+
+
+    </code>
+</pre>
+
+
   <strong>Impact of the solution</strong>
               <p>
-               This device was installed in August 2019 and during a period of six months, 57 distress cases were successfully addressed. 84% of these cases were due to ill health or safety issues, and 12% security and 4% were false alarms.
+               After obtaining a working model of the visualizer, I showcased the project to several high school students during Symposiums for evoking their interest in Computer Science. This implementation is currently being used by Girls Coding club for teaching Computer Science concepts to high school girls.
               </p>
             
             </div>
@@ -279,9 +377,9 @@
             <div class="sidebar-content">
               <ul class="list-sidebar">
                 <li>
-                  <a href="blog-second.html">Blog #2</a>
+                  <a href="blog-single.html">Blog #1</a>
                 </li>
-            <!--     <li>
+               <!--  <li>
                   <a href="#">Blog #3</a>
                 </li> -->
                <!--  <li>
@@ -323,23 +421,23 @@
             <div class="sidebar-content">
               <ul>
                 <li>
-                  <a href="#">IOT</a>
+                  <a href="#">Python</a>
                 </li>
                 <li>
-                  <a href="#">Embedded Systems</a>
+                  <a href="#">Visualizer</a>
                 </li>
-                <li>
-                  <a href="#">Arduino</a>
-                </li>
+          
                 <li>
                   <a href="#">Design</a>
                 </li>
                 <li>
                   <a href="#">Systems</a>
                 </li>
-                <li>
-                  <a href="#">JavaScript</a>
+
+                  <li>
+                  <a href="#">Sorting</a>
                 </li>
+                
               </ul>
             </div>
           </div>
