@@ -120,14 +120,13 @@
             <div class="article-content">
               <strong>Project 1: Diabetes Detection SVM and ANN Models</strong>
               <p>
-                Diabetes is known as a silent killer. Presence of high glucose level in the 
-                blood could have varied health implications ranging from heart attack to strokes 
-                and even fatality. And this happens over a period of time. Various body organs 
-                including heart, blood vessels, kidneys, eyes, and nerves may get damaged. 
-                Hence, early detection of diabetes is very critical. 
-                In this project, I create two computer vision models for identification of diabetes. 
-                The first model is a Support Vector Machine. The training and test data include information 
-                After importing the data, I had to look at the decision boundaries for which I considered the following Kernels:
+                Diabetes is known as a silent killer. Presence of high glucose level in the blood could have varied health implications ranging from 
+                heart attack to strokes and even fatality. And this happens over a period of time. Various body organs including heart, blood vessels, 
+                kidneys, eyes, and nerves may get damaged. Hence, early detection of diabetes is very critical. 
+                In this project, I created two computer vision models for identification of diabetes. 
+                The first model is a Support Vector Machine. After importing the data, I had to look at the decision boundaries for which 
+                I considered the following Kernels:
+
                 <ul>
                   <li> RBF Kernel </li>
                   <li> Linear Model </li>
@@ -153,9 +152,10 @@
 
               <p> 
 
-                I also developed a Neural Network for the same, taking 8 inputs in the input layers, 
-                32 and 16 neurons in the 2 hidden layers having ReLu activation and 1 neuron with Sigmoid 
-                activation in the output layer. The following are the accuracy plots for the models with increasing number of epochs. 
+               I also developed a Neural Network for the same, taking 8 inputs in the input layers, 32 and 16 neurons in the 2 hidden 
+                layers having ReLu activation and 1 neuron with Sigmoid activation in the output layer. 
+              The following are the accuracy plots for the models with increasing number of epochs. 
+
 
               </p>
 
@@ -168,7 +168,7 @@
              
               <strong>Project 2: Pneumonia Detection CNN Model</strong>
               <p>
-                Pneumonia is an infection that inflames the lungs' air sacs (alveoli). The air sacs may fill up with fluid or pus, causing symptoms such as a cough, fever, chills and trouble breathing. Severe Pneumonia can cause fatalities. For detecting Pneumonia, I thought of deep learning with a view to save costs and time. To do this, I used Chest X ray data from Kaggle. In this project, a model was created by using training data of the X-rays of normal lungs and pneumonia infected lungs. Due to the heavy reliance of the model on image type data, a Convoluted Neural Network was created. After importing necessary files and tools and performing image augmentation, filters were established. 32 filters of shape 3 × 3 were chosen. It was ensured that images have a 64 × 64 resolution. Relu rectifier function was used after this. After this, Pooling was performed with a 2 × 2 matrix. These Pooled images will then under the Flattening process be converted into a continuous vector. Then the Dense function was used for full connection. The following is a plot of model accuracy with increase in epoch. 
+                Pneumonia is an infection that inflames the lungs' air sacs (alveoli). The air sacs may fill up with fluid or pus, causing symptoms such as a cough, fever, chills and trouble breathing. Severe Pneumonia can cause fatalities. For detecting Pneumonia, I leveraged deep learning concepts with a view to save costs and time. To do this, I used Chest X ray data from Kaggle. In this project, a model was created by using training data of the X-rays of normal lungs and pneumonia infected lungs. Due to the heavy reliance of the model on image type data, a Convoluted Neural Network was created. After importing necessary files and tools and performing image augmentation, filters were established. 32 filters of shape 3 × 3 were chosen. It was ensured that images have a 64 × 64 resolution. Relu rectifier function was used after this. After this, Pooling was performed with a 2 × 2 matrix. These Pooled images will then under the Flattening process be converted into a continuous vector. Then the Dense function was used for full connection. The following is a plot of model accuracy and loss with increase in epoch. 
               </p>
               <p><img src="img/acc-2.png" width=500 height=300></p>
               <p><img src="img/loss-2.png" width=500 height=300></p>
